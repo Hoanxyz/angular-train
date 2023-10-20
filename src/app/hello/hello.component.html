@@ -1,0 +1,53 @@
+<h1>{{name}}</h1>
+<div>
+  <h2>Day 6</h2>
+
+  <div class="box" [class]="{'warning-bg': isWarning, 'danger-bg': isDanger}"></div>
+  <br>
+  <button (click)="isDanger = !isDanger">Toggle danger</button>
+  <button (click)="isWarning = !isWarning">Toggle warning</button>
+</div>
+
+<div>
+  <h2>Day 5</h2>
+
+  <ul>
+    <ng-container *ngIf="users.length > 0; else noUser">
+      <li *ngFor="let user of users; index as idx; last as isLast" [class.not-last-item]="!isLast">
+        STT-{{idx}}: {{ user.name }} - {{user.id}} - {{user.phone}}
+      </li>
+    </ng-container>
+    <ng-template #noUser>
+      No user here !
+    </ng-template>
+  </ul>
+</div>
+
+<div>
+  <h2>Day 4</h2>
+
+  <div>
+    <p>Hello: {{user.name}}</p>
+    <button (click)="user.age = user.age -1">Decrease</button>
+    <span>Age: {{user.age}}</span>
+    <button (click)="user.age = user.age +1">Increase</button>
+    <div *ngIf="user.age >= 18; else noJav">
+      <p>You can see JAV now</p>
+    </div>
+    <ng-template #noJav>
+      <p>You are too young for this</p>
+    </ng-template>
+  </div>
+</div>
+
+<div>
+  <h2>day 3</h2>
+  <p>My name is: {{ user.name }}</p>
+  <p>Age: {{ user.age }}</p>
+  <input [type]="inputType" [value]="user.name">
+  <button type="button" (click)="showMgs()">Click me!</button>
+  <br>
+  <p>Name: {{ name }}</p>
+  <input type="text" [(ngModel)]="name">
+</div>
+

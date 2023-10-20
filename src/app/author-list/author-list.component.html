@@ -1,0 +1,6 @@
+
+<h2>Day 8</h2>
+<app-author-detail *ngFor="let author of authors" [author]="author" (delete)="onDelete($event)" (select)="onSelected($event)">
+</app-author-detail>
+<br>
+<div>Cureent selected: {{currentAuthor.firstName}}</div>

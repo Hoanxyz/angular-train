@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'train-angular';
+  currentProgress = 70;
+  name = "Angular";
+  isChecked = true;
 }
