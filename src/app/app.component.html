@@ -1,5 +1,31 @@
-<app-toggle [(checked)]="isChecked"></app-toggle>
-<input type="text" [(ngModel)]="name">
+<div>
+  <app-toggle [(checked)]="question.question1">
+    <h3>Header 1</h3>
+    <label for="">Question1</label>
+    <p>Content1</p>
+  </app-toggle>
+  <app-toggle [(checked)]="question.question2">
+    <h3>Header 2</h3>
+    <span ngProjectAs="label" for="">Question2</span>
+    <p>Content2</p>
+    <button>Skip</button>
+  </app-toggle>
+  <br>
+</div>
+<div>
+  <!-- <app-toggle #toggleComp [(checked)]="isChecked"></app-toggle>
+  <button (click)="toggleComp.toggle()">Toggle</button>
+  <br> -->
+  <button (click)="showLast = !showLast">Show Last</button>
+  <app-toggle #toggleComp [(checked)]="isChecked"></app-toggle>
+  <app-toggle #toggleComp [(checked)]="isChecked"></app-toggle>
+  <ng-container *ngIf="showLast">
+    <app-toggle #toggleComp [(checked)]="isChecked"></app-toggle>
+  </ng-container>
+  <button #toggleBtn>Toggle</button>
+</div>
+<br>
+<input #nameInput type="text" [(ngModel)]="name">
 <app-hello name="{{name}}"></app-hello>
 <app-author-list></app-author-list>
 
